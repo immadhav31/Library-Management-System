@@ -93,73 +93,64 @@ int main() {
                         break;
 
                     case 2:
-                        // Search book
-                        printf("\nEnter\n1)Search via Book ID \n2)search via Book Name \n3)Search via Author name: ");
-                        scanf("%d", &serch);
+    // Search book
+    printf("\nEnter\n1) Search via Book ID\n2) Search via Book Name\n3) Search via Author Name: ");
+    scanf("%d", &serch);
 
-                        switch (serch) {
-                            case 1:
-                                printf("Enter book ID(Only Numerical): ");
-                                scanf("%d", &searchid);
-                                n = 0;
+    switch (serch) {
+        case 1:
+            printf("Enter Book ID (Only Numerical): ");
+            scanf("%d", &searchid);
+            n = 0;
+            for (int i = 0; i < 20; i++) {
+                if (searchid == bok[i].id) {
+                    printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
+                           bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
+                    n++;
+                }
+            }
+            if (n == 0) {
+                printf("Book ID not found\n");
+            }
+            break;
 
-                                for (int i = 0; i < 20; i++) {
-                                    if (searchid == bok[i].id) {
-                                        printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
-                                            bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
-                                        n++;
-                                    }
-                                    else{
-                                        printf("Book Id not matching.\n");
-                                    }
-                                }
-                                break;
+        case 2:
+            printf("Enter the book name (Space not Accepted): ");
+            scanf("%s", searchname);
+            n = 0;
+            for (int i = 0; i < 20; i++) {
+                if (strcmp(bok[i].name, searchname) == 0) {
+                    printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
+                           bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
+                    n++;
+                }
+            }
+            if (n == 0) {
+                printf("Book Name not found\n");
+            }
+            break;
 
-                            case 2:
-                                printf("Enter the book name(Space not Accepted): ");
-                                scanf("%s", &searchname);
+        case 3:
+            printf("Enter the author name (Space not Accepted): ");
+            scanf("%s", searchname);
+            n = 0;
+            for (int i = 0; i < 20; i++) {
+                if (strcmp(bok[i].author, searchname) == 0) {
+                    printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
+                           bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
+                    n++;
+                }
+            }
+            if (n == 0) {
+                printf("Author Name not found\n");
+            }
+            break;
 
-                                for (int i = 0; i < 20; i++) {
-                                    if (strcmp(bok[i].name, searchname) == 0) {
-                                        printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
-                                            bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
-                                        n++;
-                                    }
-                                    else{
-                                        printf("Book name not matching.\n");
-                                        break;
-                                    }
-                                    
-                                }
-                                break;
-
-                            case 3:
-                                printf("Enter the author name(Space not Accepted): ");
-                                scanf("%s", &searchname);
-
-                                for (int i = 0; i < 20; i++) {
-                                    if (strcmp(bok[i].author, searchname) == 0) {
-                                        printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
-                                            bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
-                                        n++;
-                                    }
-                                    else{
-                                        printf("Author name not matching.\n"); 
-                                        break;
-                                    }
-                                    
-                                }
-                                break;
-
-                            default:
-                                printf("Invalid choice.\n\n");
-                                break;
-                        }
-
-                        if (n == 0) {
-                            printf("Book not found");
-                        }
-                        break;
+        default:
+            printf("Invalid choice.\n\n");
+            break;
+    }
+    break;
 
                     case 3:
                         // Add new reader
@@ -348,70 +339,64 @@ int main() {
 
             switch (choice) {
                 case 1:
-                        // Search book
-                        printf("\nEnter\n1)Search via Book ID \n2)search via Book Name \n3)Search via Author name: ");
-                        scanf("%d", &serch);
+    // Search book
+    printf("\nEnter\n1) Search via Book ID\n2) Search via Book Name\n3) Search via Author Name: ");
+    scanf("%d", &serch);
 
-                        switch (serch) {
-                            case 1:
-                                printf("Enter book ID(Only Numerical): ");
-                                scanf("%d", &searchid);
-                                n = 0;
+    switch (serch) {
+        case 1:
+            printf("Enter Book ID (Only Numerical): ");
+            scanf("%d", &searchid);
+            n = 0;
+            for (int i = 0; i < 20; i++) {
+                if (searchid == bok[i].id) {
+                    printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
+                           bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
+                    n++;
+                }
+            }
+            if (n == 0) {
+                printf("Book not found\n");
+            }
+            break;
 
-                                for (int i = 0; i < 20; i++) {
-                                    if (searchid == bok[i].id) {
-                                        printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
-                                            bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
-                                        n++;
-                                    }
-                                }
-                                break;
+        case 2:
+            printf("Enter the book name (Space not Accepted): ");
+            scanf("%s", searchname);
+            n = 0;
+            for (int i = 0; i < 20; i++) {
+                if (strcmp(bok[i].name, searchname) == 0) {
+                    printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
+                           bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
+                    n++;
+                }
+            }
+            if (n == 0) {
+                printf("Book not found\n");
+            }
+            break;
 
-                            case 2:
-                                printf("Enter the book name(Space not Accepted): ");
-                                scanf("%s", &searchname);
+        case 3:
+            printf("Enter the author name (Space not Accepted): ");
+            scanf("%s", searchname);
+            n = 0;
+            for (int i = 0; i < 20; i++) {
+                if (strcmp(bok[i].author, searchname) == 0) {
+                    printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
+                           bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
+                    n++;
+                }
+            }
+            if (n == 0) {
+                printf("Book not found\n");
+            }
+            break;
 
-                                for (int i = 0; i < 20; i++) {
-                                    if (strcmp(bok[i].name, searchname) == 0) {
-                                        printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
-                                            bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
-                                        n++;
-                                    }
-                                    else{
-                                        printf("Book name not matching.\n");
-                                        break;
-                                    }
-                                    
-                                }
-                                break;
-
-                            case 3:
-                                printf("Enter the author name(Space not Accepted): ");
-                                scanf("%s", &searchname);
-
-                                for (int i = 0; i < 20; i++) {
-                                    if (strcmp(bok[i].author, searchname) == 0) {
-                                        printf("\n\tBook Information\nBook ID: %d\tBook Name: %s\nAuthor Name: %s\nAvailable: %s\tDue by Reader ID: %d\n",
-                                            bok[i].id, bok[i].name, bok[i].author, bok[i].avbl, bok[i].rdid);
-                                        n++;
-                                    }
-                                    else{
-                                        printf("Author name not matching.\n"); 
-                                        break;
-                                    }
-                                    
-                                }
-                                break;
-
-                            default:
-                                printf("Invalid choice.\n\n");
-                                break;
-                        }
-
-                        if (n == 0) {
-                            printf("Book not found.\n");
-                        }
-                        break;
+        default:
+            printf("Invalid choice.\n\n");
+            break;
+    }
+    break;
 
 
                 case 2:
