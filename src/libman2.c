@@ -231,29 +231,43 @@ int main() {
                         break;
 
                     case 6:
-                        // Submit book
-                        printf("Enter book ID: ");
-                        scanf("%d", &searchid);
+    // Submit book
+    printf("Enter book ID: ");
+    scanf("%d", &searchid);
 
-                        for (int i = 0; i < 20; i++) {
-                            if (searchid == bok[i].id) {
-                                strcpy(bok[i].avbl, "Yes");
-                                searchid1 = bok[i].rdid;
-                                bok[i].rdid = 0;
-                                break;
-                            }
-                        }
+    int bookIndex = -1;
 
-                        for (int i = 0; i < 10; i++) {
-                            if (searchid1 == rdr[i].id) {
-                                rdr[i].due = 'n';
-                                rdr[i].bid = 0;
-                                break;
-                            }
-                        }
+    // Find the book index in the array
+    for (int i = 0; i < 20; i++) {
+        if (searchid == bok[i].id) {
+            bookIndex = i;
+            break;
+        }
+    }
 
-                        printf("Book submitted successfully.\n\n");
-                        break;
+    if (bookIndex != -1) {
+        // Book found, update its availability and reader's due status
+        strcpy(bok[bookIndex].avbl, "Yes");
+        int readerId = bok[bookIndex].rdid;
+        bok[bookIndex].rdid = 0;
+
+        // Find the reader index in the array
+        for (int i = 0; i < 10; i++) {
+            if (readerId == rdr[i].id) {
+                rdr[i].due = 'n';
+                rdr[i].bid = 0;
+                break;
+            }
+        }
+
+        printf("Book submitted successfully.\n\n");
+    } else {
+        // Book not found
+        printf("Book not found.\n\n");
+    }
+
+    break;
+
 
                     case 7:
                         // Delete book
@@ -416,29 +430,43 @@ int main() {
                     break;
 
                 case 3:
-                    // Submit book
-                    printf("Enter book ID: ");
-                    scanf("%d", &searchid);
+    // Submit book
+    printf("Enter book ID: ");
+    scanf("%d", &searchid);
 
-                    for (int i = 0; i < 20; i++) {
-                        if (searchid == bok[i].id) {
-                            strcpy(bok[i].avbl, "Yes");
-                            searchid1 = bok[i].rdid;
-                            bok[i].rdid = 0;
-                            break;
-                        }
-                    }
+    int bookIndex = -1;
 
-                    for (int i = 0; i < 10; i++) {
-                        if (searchid1 == rdr[i].id) {
-                            rdr[i].due = 'n';
-                            rdr[i].bid = 0;
-                            break;
-                        }
-                    }
+    // Finding the book index
+    for (int i = 0; i < 20; i++) {
+        if (searchid == bok[i].id) {
+            bookIndex = i;
+            break;
+        }
+    }
 
-                    printf("Book submitted successfully.\n\n");
-                    break;
+    if (bookIndex != -1) {
+        // Book found, update its availability and reader's due status
+        strcpy(bok[bookIndex].avbl, "Yes");
+        int readerId = bok[bookIndex].rdid;
+        bok[bookIndex].rdid = 0;
+
+        // Find the reader index in the array
+        for (int i = 0; i < 10; i++) {
+            if (readerId == rdr[i].id) {
+                rdr[i].due = 'n';
+                rdr[i].bid = 0;
+                break;
+            }
+        }
+
+        printf("Book submitted successfully.\n\n");
+    } else {
+        // Book not found
+        printf("Book not found.\n\n");
+    }
+
+    break;
+
 
                 case 4:
                     // List of books
